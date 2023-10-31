@@ -15,7 +15,7 @@ class node{
     }
 };
 
-void insert_at_tail(node* &head,int value)
+void insert_at_tail(node* &head,int value)   //head=passed by referrence
 {
     //create a new node
     node* n=new node(value);
@@ -28,12 +28,12 @@ void insert_at_tail(node* &head,int value)
     node* temp=head; //temp is the pointer which will traverse the entire linked list, it will initially point to the head
     while(temp->link!=NULL)
     {
-        temp=temp->link;
+        temp=temp->link;    //keep updating the temp pointer
     }
     temp->link=n;
 }
 
-void display(node* head)
+void display(node* head)     //head is passed by value
 {
     node* temp=head;
     while(temp!=NULL)
